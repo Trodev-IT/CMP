@@ -4,24 +4,255 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission
+        android:name="com.google.android.gms.permission.AD_ID"
+        tools:node="remove" />
 
     <application
+        android:name=".OfflineDatabase"
         android:allowBackup="true"
+        android:allowClearUserData="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/apps_bg"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/apps_bg"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CareerMatchPro"
+        android:theme="@style/Theme.CareerMatcherPro"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
-
+        <activity
+            android:name=".PrivacyPolicyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AboutUsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.UserListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mcq_part.internationalAff.InternationalAffMCQActivity"
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity" />
+        <activity
+            android:name=".mcq_part.bangladeshAff.BangladeshAffMCQActivity"
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity" />
+        <activity
+            android:name=".mcq_part.general.GeneralMCQActivity"
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity" />
+        <activity
+            android:name=".mcq_part.geography.GeographyMCQActivity"
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity" />
+        <activity
+            android:name=".mcq_part.ethics.EthicsMCQActivity"
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity" />
+        <activity
+            android:name=".mcq_part.computer.ComputerMCQActivity"
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity" />
+        <activity
+            android:name=".mcq_part.mental.MentalMCQActivity"
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity" />
+        <activity
+            android:name=".mcq_part.math.MathMCQActivity"
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity" />
+        <activity
+            android:name=".mcq_part.english.EnglishMCQActivity"
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity" />
+        <activity
+            android:name=".McqMainActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".mcq_part.bangla.BanglaMCQActivity"
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity" />
+        <activity
+            android:name=".payment.PackageBuyActivity"
+            android:exported="false"
+            android:parentActivityName=".activity.PremiumPackagesActivity" />
+        <activity
+            android:name=".notification.NoticeViewActivity"
+            android:exported="false"
+            android:parentActivityName=".notification.NotificationActivity" />
+        <activity
+            android:name=".PrivacyActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".activity.PremiumPackagesActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".videos.BasicComputerVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".videos.PhotoshopVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".videos.MSPointVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".videos.MSWordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".videos.MSExcelVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".videos.IllustratorVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".videos.EnglishVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".videos.VideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".videos.BanglaVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ViewAllJobActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".premium_pdf.EthicsActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".premium_pdf.GeographyActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".premium_pdf.MathActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".premium_pdf.ComputerActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".premium_pdf.GeneralScienceActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".premium_pdf.InternationalAffActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".premium_pdf.BangladeshAffairActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".premium_pdf.MentalActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".premium_pdf.EnglishActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".premium_pdf.BanglaActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".cv.TemplateViewActivity"
+            android:exported="false"
+            android:parentActivityName=".cv.TemplateCVActivity" />
+        <activity
+            android:name=".cv.TemplateCVActivity"
+            android:exported="false"
+            android:parentActivityName=".cv.CVActivity" />
+        <activity
+            android:name=".activity.FullJobDetailsActivity"
+            android:exported="false"
+            android:parentActivityName=".job_sector.alljob.AllJobActivity" />
+        <activity
+            android:name=".job_sector.alljob.AllJobActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".bcs.BCSQuestionAnswerActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".activity.FullQuestionAnswerActivity"
+            android:exported="false"
+            android:parentActivityName=".bcs.BCSQuestionAnswerActivity" />
+        <activity
+            android:name=".bank_que.BankQuestionAnswerActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".job_sector.bank.BankJobActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".job_sector.ngo.NGOJobActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".job_sector.teacher.TeacherJobActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".job_sector.nongovt.NonGovtJobActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".activity.ShowPDFActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".job_sector.govt.GovtActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".cv.CVActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.WebsiteActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".notification.NotificationActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
